@@ -1,0 +1,35 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.virtual_documents/
+.pytest_cache/
+.venv/
+venv/
+# Local application state and preserved working copies
+anaconda_projects/
+.local_archive/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Data, model weights and generated experiments
+/data/
+runs/
+reports/
+weights/
+*.npz
+*.pt
+*.pth
+*.onnx
+*.zip
+*.log
+**/environment/ultralytics/
+# Local reference material
+/Description.pdf
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
