@@ -26,9 +26,9 @@
       "test_accuracy": 0.986844476482249,
       "test_macro_f1": 0.9866318613203834,
       "latency_ms": {
-        "mean_ms": 7.252939,
-        "median_ms": null,
-        "p95_ms": 9.773725
+        "mean_ms": 6.724293,
+        "median_ms": 6.536283,
+        "p95_ms": 7.597898
       }
     },
     {
@@ -52,7 +52,8 @@
     "repeats": 200,
     "device": "cuda:0",
     "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
-    "includes": "PIL transform + host-to-device + fp32 model + output validation + synchronization; excludes disk read"
+    "includes": "PIL transform + host-to-device + fp32 model + output validation + synchronization; excludes disk read",
+    "sampling": "One fixed validation image, repeated 200 times."
   },
   "latency_source": "wm_peleenet_cls/runs/wm_pelee_rebuild_e1_seed42/speed.json",
   "yolo26s_environment": {
@@ -62,27 +63,35 @@
     "cuda": "13.0",
     "gpu": "Tesla T4"
   },
-  "yolo26s_latency_status": "User supplied the Colab benchmark output on 2026-10-27; median was not displayed. Values retain the six decimals supplied.",
-  "yolo26s_latency_source": "User-provided output from the RUN_BENCHMARK=True notebook cell; E1 selected by the frozen validation result.",
+  "yolo26s_latency_status": "User supplied random-test-image benchmark output on 2026-10-27. Values retain the supplied six-decimal precision; raw timing files were not inspected.",
+  "yolo26s_latency_source": "User-provided output after applying the random-test-image benchmark cell; E1 selected by the frozen validation result.",
   "yolo26s_latency_protocol": {
     "batch": 1,
     "warmup": 20,
     "repeats": 200,
     "gpu": "Tesla T4",
-    "includes": "PIL transform + host-to-device + fp32 model + synchronization; excludes disk read"
+    "includes": "PIL transform + host-to-device + fp32 model + synchronization; excludes disk read",
+    "split": "test",
+    "sampling_seed": 42,
+    "sample_count": 200,
+    "replacement": false,
+    "sampling": "Test rows sorted by original_index, then numpy default_rng(42).choice; same images for E0/E1/E2, timed once each."
   },
   "yolo26s_experiment_latency_ms": {
     "E0": {
-      "mean_ms": 7.12204,
-      "p95_ms": 8.992822
+      "mean_ms": 6.80267,
+      "median_ms": 6.634174,
+      "p95_ms": 7.7274
     },
     "E1": {
-      "mean_ms": 7.252939,
-      "p95_ms": 9.773725
+      "mean_ms": 6.724293,
+      "median_ms": 6.536283,
+      "p95_ms": 7.597898
     },
     "E2": {
-      "mean_ms": 7.344344,
-      "p95_ms": 11.174238
+      "mean_ms": 6.83343,
+      "median_ms": 6.585975,
+      "p95_ms": 8.001769
     }
   }
 }
