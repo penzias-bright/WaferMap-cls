@@ -1,0 +1,62 @@
+{
+  "verified_on": "2026-10-27",
+  "samples": 5549,
+  "manifest_sha256": "09f363bab2e242dc3c41dd35530c8e29d77872569b56d7c483d4ef7c511b2f0d",
+  "models": [
+    {
+      "model": "YOLO26n-cls E1",
+      "source": "yolo26s_cls/runs/local_n_manual/reports/yolo26n_v1_seed42_manual",
+      "weights_sha256": "5b941d7641e630b97091d24a248efd109e6ce5ff5c8b576aa43e9d87d8c220d3",
+      "validation_accuracy": 0.9870246891331772,
+      "validation_macro_f1": 0.9868318036710497,
+      "test_accuracy": 0.9877455397368895,
+      "test_macro_f1": 0.9869367312262689,
+      "latency_ms": {
+        "mean_ms": 10.386808000203018,
+        "median_ms": 9.191949999149074,
+        "p95_ms": 16.82381500068004
+      }
+    },
+    {
+      "model": "YOLO26s-cls E1",
+      "source": "Drive: MyDrive/WaferMap/reports/wafer38_v1_seed42",
+      "weights_sha256": "d42e79d574f7b570eff7e197d9d5a19020f7189a09bb0737ffbd2e12b16ed94a",
+      "validation_accuracy": 0.9890070282933862,
+      "validation_macro_f1": 0.9887385504014041,
+      "test_accuracy": 0.986844476482249,
+      "test_macro_f1": 0.9866318613203834,
+      "latency_ms": null
+    },
+    {
+      "model": "WM-PeleeNet reconstruction E1",
+      "source": "wm_peleenet_cls/runs/wm_pelee_rebuild_e1_seed42",
+      "weights_sha256": "d6440d4c5c2139bacc1b4bd7bdc28840eae02f3ffa8a72fde9a871c6d27bd4dd",
+      "validation_accuracy": 0.9875653270859615,
+      "validation_macro_f1": 0.9867724995920221,
+      "test_accuracy": 0.9839610740673995,
+      "test_macro_f1": 0.9827646075861097,
+      "latency_ms": {
+        "mean_ms": 6.629178999828582,
+        "median_ms": 5.677850000211038,
+        "p95_ms": 11.42617000277823
+      }
+    }
+  ],
+  "latency_protocol": {
+    "batch": 1,
+    "warmup": 20,
+    "repeats": 200,
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "includes": "PIL transform + host-to-device + fp32 model + output validation + synchronization; excludes disk read"
+  },
+  "latency_source": "wm_peleenet_cls/runs/wm_pelee_rebuild_e1_seed42/speed.json",
+  "yolo26s_environment": {
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130",
+    "ultralytics": "8.4.189",
+    "cuda": "13.0",
+    "gpu": "Tesla T4"
+  },
+  "yolo26s_latency_status": "No speed report found in the Drive experiment reports on the verification date."
+}
