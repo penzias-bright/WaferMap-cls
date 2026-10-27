@@ -31,14 +31,14 @@
 | 模型 | 测速 GPU | 平均延迟（ms） | 中位延迟（ms） | P95 延迟（ms） |
 | --- | --- | ---: | ---: | ---: |
 | YOLO26n-cls | RTX 4070 Laptop | 10.387 | 9.192 | 16.824 |
-| YOLO26s-cls | 未记录 | — | — | — |
+| YOLO26s-cls | Tesla T4 | 7.253 | — | 9.774 |
 | WM-PeleeNet 重建版 | RTX 4070 Laptop | 6.629 | 5.678 | 11.426 |
 
 本地两模型来自同一次对照测速：batch=1、FP32、预热 20 次、计时 200 次；包含图像预处理、CPU→GPU 传输、模型前向、输出校验与 CUDA 同步，不含磁盘读取。WM-PeleeNet 在该次测量中延迟更低。
 
-YOLO26s 的正式实验运行于 Colab Tesla T4，当前 Drive 报告中未找到推理测速记录，因此不填写延迟，也不进行跨 GPU 速度排名。WM-PeleeNet 从随机权重训练，YOLO 使用预训练权重，训练条件并不完全相同。
+YOLO26s 使用用户提供的 Colab 正式测速输出（冻结方案 E1），同样为 batch=1、FP32、预热 20 次、计时 200 次，包含预处理、传输、前向与同步，不含磁盘读取；表格未提供中位数，故留空。T4 与 RTX 4070 Laptop 的记录不用于跨 GPU 速度排名。WM-PeleeNet 从随机权重训练，YOLO 使用预训练权重，训练条件并不完全相同。
 
-指标取自本地与 Drive 的冻结记录、`test_metrics.json` 和双模型 `speed.json`；[结果快照](docs/benchmark-results.json)保留完整精度、原报告位置、划分与权重哈希，便于核对。快照不包含权重或样本数据。
+指标取自本地与 Drive 的冻结记录、`test_metrics.json`、双模型 `speed.json` 及用户提供的 Colab 测速表；[结果快照](docs/benchmark-results.json)保留完整精度、原报告位置、划分与权重哈希，便于核对。快照不包含权重或样本数据。
 
 ## 快速开始
 

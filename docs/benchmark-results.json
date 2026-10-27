@@ -25,7 +25,11 @@
       "validation_macro_f1": 0.9887385504014041,
       "test_accuracy": 0.986844476482249,
       "test_macro_f1": 0.9866318613203834,
-      "latency_ms": null
+      "latency_ms": {
+        "mean_ms": 7.252939,
+        "median_ms": null,
+        "p95_ms": 9.773725
+      }
     },
     {
       "model": "WM-PeleeNet reconstruction E1",
@@ -58,5 +62,27 @@
     "cuda": "13.0",
     "gpu": "Tesla T4"
   },
-  "yolo26s_latency_status": "No speed report found in the Drive experiment reports on the verification date."
+  "yolo26s_latency_status": "User supplied the Colab benchmark output on 2026-10-27; median was not displayed. Values retain the six decimals supplied.",
+  "yolo26s_latency_source": "User-provided output from the RUN_BENCHMARK=True notebook cell; E1 selected by the frozen validation result.",
+  "yolo26s_latency_protocol": {
+    "batch": 1,
+    "warmup": 20,
+    "repeats": 200,
+    "gpu": "Tesla T4",
+    "includes": "PIL transform + host-to-device + fp32 model + synchronization; excludes disk read"
+  },
+  "yolo26s_experiment_latency_ms": {
+    "E0": {
+      "mean_ms": 7.12204,
+      "p95_ms": 8.992822
+    },
+    "E1": {
+      "mean_ms": 7.252939,
+      "p95_ms": 9.773725
+    },
+    "E2": {
+      "mean_ms": 7.344344,
+      "p95_ms": 11.174238
+    }
+  }
 }
