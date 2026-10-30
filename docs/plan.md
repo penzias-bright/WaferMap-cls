@@ -27,6 +27,4 @@ python tests/check_notebooks.py
 
 ## 数据语义
 
-[作者确认像素 3 为噪声](https://github.com/Junliangwangdhu/WaferMap/issues/4#issuecomment-2438186171)；将其映射为 2 是工程假设。标签顺序为 Center、Donut、Edge_Loc、Edge_Ring、Loc、Near_Full、Scratch、Random；类别 ID 按标签向量字典序生成，不等同原论文 C1～C38。
-
-单随机种子结果不代表统计显著性；完全去重不排除近似重复、合成样本或批次关联。
+[作者确认像素 3 为噪声](https://github.com/Junliangwangdhu/WaferMap/issues/4#issuecomment-2438186171)，现将其映射为 2 。标签顺序为 Center、Donut、Edge_Loc、Edge_Ring、Loc、Near_Full、Scratch、Random；类别 ID 按标签向量字典序生成。
